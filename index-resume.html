@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta name="author" content="Bogie Csuba">
+   <meta name="description" content="Resume file converter into printable HTML  via jQuery and JSON">
+   <title>Aimsio Resume by Bogie Csuba</title>
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+   <script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>
+   <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <!-- for printing media all --> -->
+   <link rel="stylesheet" href="resume.css" media="all">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <div class="container-fluid">
+      <header>
+         <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+               <h1 class="display-4">Resume Converter</h1>
+               <p class="lead">Bogie's test exercise for Aimsio</p>
+            </div>
+         </div>
+      </header>
+      </section>
+      <section id="resume">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div id="column-content">
+                  <span>
+                     <h1>{{name}}</h1>
+                  </span>
+                  <div id="thumbnail">
+                     <img src="{{picture}}" class="rounded-circle" alt="logo">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <h4>Contact</h4>
+            <ul class="list-group">
+               {{#address}}
+               <li class="list-group-item">{{street}}, {{city}}, {{country}}, {{region}}</li>
+               {{/address}}
+               <li class="list-group-item">{{phone_number}}</li>
+               <li class="list-group-item">{{email}}</li>
+            </ul>
+         </div>
+         <br>
+         <div class="container-fluid">
+            <h4>Work History</h4>
+            <ul class="list-group">
+               {{#work_history}}
+               <li class="list-group-item">Company: {{company}}</li>
+               <li class="list-group-item">Start Date: {{start_date}}</li>
+               <li class="list-group-item">Finish Date: {{end_date}}</li>
+               <li class="list-group-item">Title: {{description}}</li>
+               {{/work_history}}
+            </ul>
+            <br>
+            <h4>Skills</h4>
+            <ul class="list-group">
+               {{#skills}}
+               <li class="list-group-item">{{name}}</li>
+               {{/skills}}
+            </ul>
+            <br>
+            <h4>Education</h4>
+            <ul class="list-group">
+               {{#education}}
+               <li class="list-group-item">School: {{school}}</li>
+               <li class="list-group-item">Start Date: {{start_date}}</li>
+               <li class="list-group-item">Finish Date: {{end_date}}</li>
+               <li class="list-group-item">Major: {{major}}</li>
+               <li class="list-group-item">Specialization: {{specialization}}</li>
+               {{/education}}
+            </ul>
+         </div>
+
+      </section>
+      <footer>
+         <p>Created by <a href="http://linkedin.com/in/bogiecsuba ">Boglarka Bogie Csuba</a></p>
+      </footer>
+   </div>
+   <script src="resume.js"></script>
+</body>
+
+</html>
